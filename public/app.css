@@ -1,4 +1,8 @@
 .appColor {
-  background-color: #F2B29B;
-  font-family: cursive;
+  background-color: #F6703F;
+  color: white;
 };
+
+.formHead {
+  font-family: cursive;
+}
