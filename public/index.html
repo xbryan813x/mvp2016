@@ -1,0 +1,34 @@
+<!DOCTYPE>
+<html>
+<head>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="app.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <title>Customer Database</title>
+</head>
+  <body  ng-app='myApp' class="appColor">
+    <div class="container" ng-controller="formCtrl">
+      <h1>New Customer Form</h1>
+      <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Is Military (Y/N)</th>
+              <th>Phone Number</th>
+            <tr>
+          <thead>
+            <tbody>
+              <tr ng-repeat="customer in customers">
+                <td>{{customer.name}}</td>
+                <td>{{customer.isMilitary}}</td>
+                <td>{{customer.phoneNumber}}</td>
+              </tr>
+            <tbody>
+      </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <script src="controllers/controller.js"></script>
+  </body>
+</html>
