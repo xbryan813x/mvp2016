@@ -18,11 +18,24 @@ myApp.controller('formCtrl',['$scope','$http', function($scope,$http){
     })
   }
 
-  $scope.remove = function(item){
-    console.log(item)
-    $http.delete
-  };
+  $scope.remove = function(id){
+    console.log(id)
+    $http.delete('/customers/' + id).then(function(){
+      console.log("here")
+      $http.get('/customers').then(function(res){
+        console.log("THIS IS THE GET DATA FROM CONTROLLER", res.data)
+        $scope.customers = res.data;
+      })
+    }) // '/customers/31749123741920874'
+  }
 
+
+  $scope.edit = function(id){
+    console.log(id)
+    $http.get('/customers' + id).then(function(res){
+      $scope.contact = res.data;
+    })
+  }
   // person1 = {
   //   name: "Sally Sue",
   //   isMilitary: "YES",

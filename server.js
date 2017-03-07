@@ -50,7 +50,33 @@ app.get('/customers',function(req,res){
   })
 })
 
+app.delete('/customers/:id', function(req,res){
+  console.log(req.params.id) // 'banana'
+  Customer.findByIdAndRemove(req.params.id,function(err, customer){
+    res.send(customer)
+  })
+})
 
+app.get('/customers/:id',function(err, customers){
+  Customer.findById(req.params.id, function (err, customer) {
+    if (err) {
+        res.status(500).send(err);
+    } else {
+        // Update each attribute with any possible attribute that may have been submitted in the body of the request
+        // If that attribute isn't in the request body, default back to whatever it was before.
+        Customer.Name = req.body.Name;
+        Customer.isMilitary = req.body.isMilitary;
+        Customer.phoneNumber = req.body.phoneNumber;
+
+        Customer.save(function (err, customer) {
+            if (err) {
+                res.status(500).send(err)
+            }
+            res.send(customer);
+        });
+    }
+});
+})
 // app.post('/customers',function(req,res){
 //   console.log(req.body);
 // })
