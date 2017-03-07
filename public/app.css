@@ -1,8 +1,9 @@
 .appColor {
-  background-color: #F6703F;
-  color: white;
-};
+  background-color: #eaece5;
+  font-family: serif;
+  border-top-style: dotted;
+  border-right-style: solid;
+  border-bottom-style: dotted;
+  border-left-style: solid;
 
-.formHead {
-  font-family: cursive;
-}
+};
