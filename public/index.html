@@ -23,7 +23,7 @@
               <th><input type="text" placeholder="Name"         ng-model="contact.Name"></th>
               <th><input type="text" placeholder="is Military?" ng-model="contact.isMilitary"></th>
               <th><input type="text" placeholder="phone number" ng-model="contact.phoneNumber"></th>
-              <th><button type="button" class="btn btn-success" ng-model="addClient">Add Client</button>
+              <th><button type="button" class="btn btn-success" ng-click="addClient()">Add Client</button>
               <tr ng-repeat="customer in customers">
                 <td>{{customer.name}}</td>
                 <td>{{customer.isMilitary}}</td>
