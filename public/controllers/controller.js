@@ -18,7 +18,10 @@ myApp.controller('formCtrl',['$scope','$http', function($scope,$http){
     })
   }
 
-
+  $scope.remove = function(item){
+    console.log(item)
+    $http.delete
+  };
 
   // person1 = {
   //   name: "Sally Sue",
